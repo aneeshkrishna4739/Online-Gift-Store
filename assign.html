@@ -1,0 +1,97 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="assign.css">
+</head>
+<h2>infy</h2>
+<div id="formbody">
+<center>
+	<table bordercolor="black" cellpadding="20px" bgcolor="white">
+	<th align="center" colspan=2> form for the assignment</th>
+	<form onsubmit="return validate()">
+	<tr>
+		<td><label for="fname">name:</label></td>
+		<td><input type="text" id="fname" maxlength="10" placeholder="enter first and last name"></td>
+	</tr>
+	<tr>
+		<td><label for="pass">password:</label></td>
+		<td><input type="password" id="pass" maxlength="10" placeholder="enter password"></td>
+	</tr>
+	<tr>
+		<td><label for="email">email:</label></td>
+		<td><input type="email" id="email" maxlength="20" placeholder="enter email"></td>
+	</tr>
+	<tr>
+		<td><label for="phone">phone:</label></td>
+		<td><input type="number" id="phone" maxlength="10" placeholder="enter phone"></td>
+	</tr>
+	<tr>
+		<td><label for="dob">dob:</label></td>
+		<td><input type="date" id="dob" ></td>
+	</tr>
+	<tr>
+		<td><label for="stream">stream:</label></td>
+		<td colspan=2><input type="radio" id="oss" name="stream" value="OSS">
+		<label for="stream">OSS</label>
+		<input type="radio" id="java" name="stream" value="java" checked>
+		<label for="stream">java</label>
+		</td>
+	</tr>
+	<tr>
+	<label for="categ">category</label></td>
+	<td align="center">
+	<select id="categ" name="categ">
+	<option value="#">select</option>
+	<option value="eta">eta</option>
+	<option value="systemengineer">systemengineer</option>
+	<option value="housekeeping">housekeeping</option>
+	<option value="ccd">ccd</option>
+	</select>
+	</td>
+	</tr>
+	<tr>
+	<td align="center" colspan="2">
+	<input type="submit" value="Submit"/>
+	<input type="reset" value="Reset"/>
+	</td>
+	</tr>
+	</form>
+	</table>
+	</center>
+	</div>
+<p id="footer"> &copy aneesh</p>
+<script>
+function validate()
+{
+var str=document.getElementById("fname").value;
+var str1=document.getElementById("pass").value;
+var str2=document.getElementById("email").value;
+var str3=document.getElementById("phone").value;
+fname_pat=/[A-Z][a-z]*[ ][A-Z][a-z]*/.test(str);
+pass_pat=/[A-Za-z]+[ ][0-9]*/.test(str1);
+email_pat=/^[a-z]+[0-9]*[a-zA-Z]*@[a-z]+[.][c][o][m]/.test(str2);
+phone_pat=/[6-9][0-9]{9}/.test(str3);
+if(fname_pat==false||fname_pat=="")
+{window.alert("invalid name");
+fname.focus();
+return false;
+}
+else if (pass_pat==false||pass_pat=="")
+window.alert("invalid password");
+pass.focus();
+return false;
+}
+else if (email_pat==false||email_pat=="")
+window.alert("invalid mail id");
+email.focus();
+return false;
+}
+else if (phone_pat==false||phone_pat=="")
+window.alert("invalid phone no");
+phone.focus();
+return false;
+}	
+	else return true;
+	}
+</script>
+</body>
+</html>
